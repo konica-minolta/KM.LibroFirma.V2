@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <RootNamespace>KM.LibroFirma.V2</RootNamespace>
     <AssemblyName>KM.LibroFirma.V2</AssemblyName>
   </PropertyGroup>
@@ -32,6 +32,11 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Model\ISignatureData.cs" />
+    <Compile Remove="Model\SignatureDataP7M.cs" />
+    <Compile Remove="Model\SignatureDataPdf.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -53,6 +58,9 @@
     <PackageReference Include="MFiles.VAF" Version="22.12.672.3" />
     <PackageReference Include="MFiles.VAF.Configuration" Version="23.3.5" />
     <PackageReference Include="MFiles.VAF.Configuration.Logging.NLog" Version="23.3.5" />
+    <PackageReference Include="MFiles.VAF.Extensions" Version="23.1.49" />
+    <PackageReference Include="NLog" Version="5.1.2" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
   <Target Name="RunWhenBuildChanges" AfterTargets="Build">
     <!-- Load the current version from the appdef file. -->

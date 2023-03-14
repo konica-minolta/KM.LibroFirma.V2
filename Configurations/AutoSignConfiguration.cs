@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 //using MFiles.VaultApplications.Logging.NLog;
 
-namespace KM.LibroFirma.V2
+namespace KM.LibroFirma.V2.Configurations
 {
     [DataContract]
     [MFWorkflow(RefMember = "MF_WF_AutoSign")]
@@ -32,12 +32,12 @@ namespace KM.LibroFirma.V2
 
         [MFState(AllowEmpty = false, Required = true)]
         [DataMember]
-        [JsonConfEditor(HelpText = "The \"Sent for Auto Signing\" state in the workflow.", Label = "Sent for Auto Signing")]
+        [JsonConfEditor(HelpText = "The \"Sent for Auto Signing\" state in the workflow.", Label = "State to send for Auto Signing")]
         public MFIdentifier MF_ST_AutoSign_SentForSigning { get; set; }
 
         [MFState(AllowEmpty = false, Required = true)]
         [DataMember]
-        [JsonConfEditor(HelpText = "The \"Signed\" state in the workflow.", Label = "Signed")]
+        [JsonConfEditor(HelpText = "The \"Signed\" state in the workflow.", Label = "State for auto Signed documents ")]
         public MFIdentifier MF_ST_AutoSign_Signed { get; set; }
         [DataMember]
         [JsonConfEditor(Label = "Height", Hidden = false, DefaultValue = 100)]

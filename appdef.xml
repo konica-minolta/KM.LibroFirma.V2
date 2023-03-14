@@ -10,7 +10,7 @@
   <version>2.0.0.1</version>
   <copyright></copyright>
   <required-mfiles-version>22.3.0.0</required-mfiles-version>
-  <multi-server-compatible>false</multi-server-compatible>
+  <multi-server-compatible>true</multi-server-compatible>
   <extension-objects>
     <extension-object>
       <name>KM.LibroFirma.V2</name>
