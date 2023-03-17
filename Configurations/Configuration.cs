@@ -14,22 +14,27 @@ namespace KM.LibroFirma.V2
    public class Configuration 
     {
 
-      [DataMember(EmitDefaultValue = false, Order = 10)]
+      [DataMember(EmitDefaultValue = false, Order = 1)]
       [JsonConfEditor(HelpText = "Specifies configuration for Automatic signing documents with advanced signature.", IsRequired = false, Label = "Auto Signing Configurations")]
       [Security(ChangeBy = SecurityAttribute.UserLevel.VaultAdmin)]
       public List<AutoSignSettings> AutoSignsConfig = new List<AutoSignSettings>();
 
 
-      [DataMember(Order = 11)]
+      [DataMember(Order = 2)]
       [Security(ChangeBy = SecurityAttribute.UserLevel.VaultAdmin)]
       [JsonConfEditor(Label = "Logging Configurations", Hidden = false)]
       public NLogLoggingConfiguration LoggingConfiguration { get; set; } = new NLogLoggingConfiguration();
 
-      [DataMember]
+      [DataMember(Order =3)]
       [Security(ChangeBy = SecurityAttribute.UserLevel.VaultAdmin)]
       [JsonConfEditor(Label = "Multi Sign Configurations")]
       public MultiSignSettings MultiSignConfig = new MultiSignSettings();
-   }
+
+        [DataMember(Order = 4)]
+        [Security(ChangeBy = SecurityAttribute.UserLevel.VaultAdmin)]
+        [JsonConfEditor(Label = "Send Mail Configurations")]
+        public SendMailConfiguration sendMailConfig = new SendMailConfiguration();
+    }
 
 
    [DataContract]
